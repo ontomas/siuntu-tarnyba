@@ -1,0 +1,137 @@
+$tablet: 992px;
+
+@mixin tablet {
+    @media (max-width: #{$tablet}) {
+        @content;
+    }
+}
+
+.navbar {
+    margin-bottom: 0;
+
+    .navbar-brand {
+        padding: 5px;
+        img {
+            height: 70px;
+        }
+    }
+}
+
+#showcase {
+    background: url(../img/showcase.jpeg) no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+
+    .container {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 20px 30px 30px 30px;
+        text-align: center;
+        width: 100%;
+
+        a {
+            margin: .5em;
+        }
+    }
+}
+
+#about {
+    div {
+        text-align: center;
+        padding: 1em;
+
+        h2 {
+            color: $base-color;
+            padding: 1em;
+        }
+    }
+    .logo {
+        max-height: 350px;
+        padding: 30px;
+    }
+}
+
+#services {
+    background: #f3f3f3;
+    text-align: center;
+    .container {
+        h2 {
+            color: $base-color;
+            padding: 1em;
+
+            @include tablet{
+                padding: 0;
+                padding-top: 1em;
+            }
+        }
+
+        .row {
+            padding: 1em;
+
+            @include tablet {
+                .col-md-3 {
+                    margin: 6em 0;
+                }
+            }
+        }
+
+        .fa {
+            font-size: 60px;
+        }
+
+    }
+
+}
+
+#price-table {
+    @include tablet {
+        .row {
+            display: none;
+        }
+    }
+    .card {
+        text-align:center;
+        border:1px solid #e5e5e5;
+        border-top: none;
+        padding: 1em;
+    }
+
+    .btn {
+        margin: 2em;
+        width: 200px;
+    }
+}
+
+#map {
+    iframe {
+        width: 100%;
+    }
+}
+
+#contacts {
+    .zabuto_calendar {
+        margin: 1em;
+    }
+
+    form {
+        margin: 1em;
+
+        .btn {
+            padding: 0;
+        }
+    }
+}
+
+footer {
+    height: 100px;
+    background-color: #00242c;
+    color: #fff;
+    font-size: 0.9em;
+    margin-top: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
